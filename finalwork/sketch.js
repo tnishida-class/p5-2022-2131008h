@@ -23,7 +23,7 @@ let ropey;
 const interval = 15;
 let sizer = 11;
 const nannka = 0.01
-
+let fadeout = 0;
 
 
 
@@ -311,6 +311,7 @@ function TenthScene(){
 }
 
 function EleventhScene(){
+  
   
     ThirteenthScene();
 
@@ -669,7 +670,7 @@ function draw() {
       if(movespeedxr < 180){
         
         movespeedxr +=30
-        moveupper +=36
+        moveupper +=30
         //console.log({moveupper});
         
         NinthScene(movespeedxr,moveupper);
@@ -708,7 +709,7 @@ function draw() {
     case "eleScene"://開けるとき
 
       if(openSpeed < 150){
-          openSpeed += 15;
+          openSpeed += 5;
           EleventhScene();
       }
       else if(openSpeed >= 150 && pussedkey == 'w'){        
@@ -730,7 +731,7 @@ function draw() {
     case "tweScene"://占めるとき
       
       if(openSpeed >0 ){
-        openSpeed -= 15;
+        openSpeed -= 5;
           EleventhScene();
       }
       else if(openSpeed <= 0 && pussedkey == 'w'){
@@ -746,6 +747,25 @@ function draw() {
       
     case "13Scene":
       console.log("シーン13来たよん");
+      EleventhScene();
+     
+      
+      fadeout +=25;
+
+      background(0,fadeout);
+      console.log({fadeout});
+      
+      if(fadeout > 500){
+        
+        textSize(13)
+       text(".12KB",300,700);
+      }
+     
+
+      
+
+      
+
       
       
       
